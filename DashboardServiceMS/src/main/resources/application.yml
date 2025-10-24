@@ -1,0 +1,68 @@
+server:
+  port: 8086
+
+# KYCServiceMS/src/main/resources/application.yml
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 4000
+
+
+spring:
+  mail: 
+    host: smtp.gmail.com
+    port: 587
+    username: kycservice.info@gmail.com
+    password: jfnkwaqjkshyqowc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  application:
+    name: DashboardServiceMS
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1522:orcl
+    username: system
+    password: "Kshitu@123"
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+customer:
+  service:
+    url: http://localhost:8081
+
+kyc:
+  service:
+    url: http://localhost:8083
+
+account:
+  service:
+    url: http://localhost:8084
+
+bank:
+  service:
+    url: http://localhost:8085
+
+
+
+
+
+
+
